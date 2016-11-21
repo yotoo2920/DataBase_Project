@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from .models import City
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'db_proj/post_list.html', {'posts': posts})
+def home_page(request):
+	city = City.objects.using('oracle').get(name="Gainesville")
+	return render(request, 'db_proj/home_page.html', { 'city': city })

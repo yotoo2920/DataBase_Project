@@ -79,6 +79,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'data', 'db.sqlite3'),
+    },
+     'oracle': {
+            'ENGINE': 'django.db.backends.oracle',
+            'NAME': 'orcl',
+            'USER': 'dorta',
+            'PASSWORD': 'password',
+            'HOST': 'oracle.cise.ufl.edu',
+            'PORT': '1521',
     }
 }
 
