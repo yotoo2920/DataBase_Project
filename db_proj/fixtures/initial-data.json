@@ -1,0 +1,20 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$24000$1YnsorMUPk6B$xdlJkx+eX5t9KDVxkVVoajcvr0dbpCc/rwSB0ujSrRs=",
+    "last_login": "2016-11-21T02:45:11Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "d.orta.santana@ufl.edu",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2016-11-20T22:21:42Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
