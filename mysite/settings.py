@@ -76,11 +76,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'data', 'db.sqlite3'),
-    },
-     'oracle': {
+     'default': {
             'ENGINE': 'django.db.backends.oracle',
             'NAME': 'orcl',
             'USER': 'dorta',
