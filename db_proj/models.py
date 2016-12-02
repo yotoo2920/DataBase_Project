@@ -10,7 +10,7 @@ class City(models.Model):
     elevation = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'city'
         unique_together = (('name', 'state'),)
 
@@ -24,7 +24,7 @@ class Economy(models.Model):
     inflation = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'economy'
 
 
@@ -34,7 +34,7 @@ class Ethnicgroup(models.Model):
     percentage = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'ethnicgroup'
         unique_together = (('name', 'state'),)
 
@@ -47,7 +47,7 @@ class Industry(models.Model):
     type = models.CharField(max_length=25, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'industry'
 
 
@@ -57,70 +57,66 @@ class Ismember(models.Model):
     organization = models.CharField(max_length=12)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'ismember'
         unique_together = (('state', 'name', 'organization'),)
 
 
 class Jobs(models.Model):
-    salary = models.FloatField(blank=True, null=True)
-    occupatid = models.FloatField(blank=True, null=True)
-    personid = models.FloatField()
-    title = models.CharField(max_length=40)
+    jobid = models.BigIntegerField(primary_key=True)
+    name = models.CharField(max_length=75, blank=True, null=True)
+    company_name = models.CharField(max_length=40, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'jobs'
-        unique_together = (('personid', 'title'),)
 
 
 class Language(models.Model):
-    state = models.CharField(max_length=40)
-    city = models.CharField(max_length=40)
-    name = models.CharField(max_length=50)
-    percentage = models.FloatField(blank=True, null=True)
+    id = models.BigIntegerField(primary_key=True)
+    region = models.CharField(max_length=4, blank=True, null=True)
+    language = models.CharField(max_length=20)
+    percentage = models.BigIntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'language'
-        unique_together = (('state', 'city', 'name'),)
+        unique_together = (('id', 'language'),)
 
 
 class Occupation(models.Model):
-    occupatid = models.FloatField()
+    occupatid = models.FloatField(primary_key=True)
     job_title = models.CharField(max_length=40)
     name = models.CharField(max_length=40)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'occupation'
         unique_together = (('occupatid', 'job_title'),)
 
 
 class Organization(models.Model):
-    abbreviation = models.CharField(max_length=12)
+    oid = models.BigIntegerField(primary_key=True)
     name = models.CharField(max_length=40)
-    state = models.CharField(max_length=40, blank=True, null=True)
-    city = models.CharField(max_length=40, blank=True, null=True)
-    established = models.DateField(blank=True, null=True)
+    url = models.CharField(max_length=40, blank=True, null=True)
+    region = models.CharField(max_length=4, blank=True, null=True)
+    address = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'organization'
-        unique_together = (('abbreviation', 'name'),)
+        unique_together = (('oid', 'name'),)
 
 
 class Person(models.Model):
-    id = models.FloatField(primary_key=True)
-    state = models.CharField(max_length=40, blank=True, null=True)
-    city = models.CharField(max_length=25, blank=True, null=True)
-    name = models.CharField(max_length=40)
-    dob = models.DateField(blank=True, null=True)
-    weight = models.FloatField(blank=True, null=True)
-    height = models.FloatField(blank=True, null=True)
+    id = models.BigIntegerField(primary_key=True)
+    name = models.CharField(max_length=30)
+    region = models.CharField(max_length=4, blank=True, null=True)
+    occupation = models.CharField(max_length=75, blank=True, null=True)
+    weekly_salary = models.BigIntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'person'
         unique_together = (('id', 'name'),)
 
@@ -136,7 +132,7 @@ class Population(models.Model):
     emp_unemployed = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'population'
 
 
@@ -147,29 +143,42 @@ class Religion(models.Model):
     percentage = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'religion'
         unique_together = (('name', 'state', 'city'),)
 
 
 class Services(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(primary_key=True, max_length=20)
     govid = models.FloatField()
     budget = models.FloatField(blank=True, null=True)
     numofemp = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'services'
         unique_together = (('name', 'govid'),)
 
 
 class State(models.Model):
-    name = models.CharField(unique=True, max_length=40)
-    capital = models.CharField(max_length=40)
-    population = models.FloatField(blank=True, null=True)
+    id = models.BigIntegerField(primary_key=True, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    abbreviation = models.CharField(max_length=4, blank=True, null=True)
+    country = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    sort = models.BigIntegerField(blank=True, null=True)
+    status = models.CharField(max_length=255, blank=True, null=True)
+    occupied = models.CharField(max_length=255, blank=True, null=True)
+    notes = models.CharField(max_length=255, blank=True, null=True)
+    fips_state = models.CharField(max_length=255, blank=True, null=True)
+    assoc_press = models.CharField(max_length=255, blank=True, null=True)
+    standard_federal_region = models.CharField(max_length=255, blank=True, null=True)
+    census_region = models.CharField(max_length=255, blank=True, null=True)
+    census_region_name = models.CharField(max_length=255, blank=True, null=True)
+    census_division = models.CharField(max_length=255, blank=True, null=True)
+    census_division_name = models.CharField(max_length=255, blank=True, null=True)
+    circuit_court = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'state'
-        unique_together = (('name', 'capital'),)
