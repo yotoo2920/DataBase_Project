@@ -1,10 +1,10 @@
 {% extends 'db_proj/base.html' %}
 
-{% block content %}
+{% for person in persons %}
 
 <h1>Name: {{ person.name }}</h1>
 <h1>Region: {{ person.region }}</h1>
 <h1>Occupation: {{ person.occupation }}</h1>
 <h1>Weekly Salary: {{ person.weekly_salary }}</h1>
 
-{% endblock %}
+{% endfor %}
