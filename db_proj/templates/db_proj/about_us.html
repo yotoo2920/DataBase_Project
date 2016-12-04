@@ -1,11 +1,9 @@
 {% load staticfiles %}
+
 <html>
     <head>
         <title>DataBase Project</title>
-        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
         <link rel="stylesheet" href="{% static 'db_proj/db_proj.css' %}" >
-        <!-- <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
     </head>
 
     <header>
@@ -24,44 +22,44 @@
        </div>
    </body> -->
 
+<!-- href="{% url 'home_page' %}#About" -->
+<a href="{% url 'home_page' %}#home_page">
+  <div class="div1"> <div class="button1">
+    Home
+  </div>
+</a>
 
-      <a href="home_page.html">
-        <div class="div1"> <div class="button1">
-        Home
-        </div>
-      </a>
+<a href="{% url 'home_page' %}set_of_data">
+  <div class="button1">
+    Set Of Data
+  </div>
+</a>
 
-      <a href="set_of_data.html">
-      <div class="button1">
-        Set Of Data
-      </div>
-      </a>
+<a href="{% url 'home_page' %}queries">
+  <div class="button1">
+    Queries
+  </div>
+</a>
 
-      <a href="queries.html">
-      <div class="button1">
-        Queries
-      </div>
-      </a>
-
-    <a href="about_us.html">
-      <div class="button1">
-        About Us
-      </div>
-    </a>
+<a href="{% url 'home_page' %}about_us">
+  <div class="button1">
+    About Us
+  </div>
+</a>
     <!-- Here you put whatever you want such as data or quires  -->
-<h1>Name: {{ city.name }}</h1>
- <h1>State: {{ city.state }}</h1>
-<h1>population: {{ city.population }}</h1>
-<h1>Longitude: {{ city.longitude }}</h1>
-<h1>latitude: {{ city.latitude }}</h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<div class="BodyStyle"> The website and the database is implemented and designed by:<br/><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;Dario Orta Santana<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;Douglas S Hewitt <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;Alwaleed Alkhodairi<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;Khalid Alnamlah<br/>
+</div>
 <!-- Here you put whatever you want such as data or quires  -->
 
 </div>
-
-
-
-
-
 
     <footer> <div class="div2">
       <div class="HeaderStyle">

@@ -7,4 +7,3 @@ urlpatterns = [
     url(r'^queries/$', views.queries, name='queries'),
     url(r'^about_us/$', views.about_us, name='about_us'),
 ]
-# ^students/$
