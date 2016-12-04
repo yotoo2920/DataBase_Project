@@ -1,12 +1,11 @@
 {% load staticfiles %}
-
 <html>
     <head>
         <title>DataBase Project</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/db_proj.css' %}" >
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+        <link rel="stylesheet" href="{% static 'db_proj/db_proj.css' %}">
+        <!-- <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
     </head>
 
     <header>
@@ -17,7 +16,15 @@
       </div>
     </header>
 
-        <body>
+     <!-- <body>
+       <div class="div1">
+
+           {% block content %}
+           {% endblock %}
+       </div>
+   </body> -->
+
+
       <a href="home_page.html">
         <div class="div1"> <div class="button1">
         Home
@@ -41,16 +48,17 @@
         About Us
       </div>
     </a>
+
+    <!-- Here you put whatever you want such as data or quires  -->
+
+
 </div>
-    </body>
 
-    <body>
-        <div class="div2">
 
-            {% block content %}
-            {% endblock %}
-        </div>
-    </body>
+
+
+
+
     <footer> <div class="div2">
       <div class="HeaderStyle">
       Information and Database Management Systems I
