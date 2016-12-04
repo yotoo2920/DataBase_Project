@@ -49,11 +49,36 @@
 </a>
 
 <!-- Here you put whatever you want such as data or quires Down -->
-<h1>Name: {{ city.name }}</h1>
-<h1>State: {{ city.state }}</h1>
-<h1>population: {{ city.population }}</h1>
-<h1>Longitude: {{ city.longitude }}</h1>
-<h1>latitude: {{ city.latitude }}</h1>
+<h1>--Selects the average salary in the us--</h1>
+<a href="{% url 'home_page' %}base">
+  <div class="button1">
+    Querie 1
+  </div>
+</a>
+<h1>--Selects the Occupation and yearly salary of the Occupation with the largest salary--</h1>
+<a href="{% url 'home_page' %}base">
+  <div class="button1">
+    Querie 2
+  </div>
+</a>
+<h1>--Selects the state name and salary from the state with the highest salary--</h1>
+<a href="{% url 'home_page' %}base">
+  <div class="button1">
+    Querie 3
+  </div>
+</a>
+<h1>--Selects the Name of the state and the WPC(wealth per citizen)defined as the GDP of state/Population of the state with the highest wealth per citizen--</h1>
+<a href="{% url 'home_page' %}base">
+  <div class="button1">
+    Querie 4
+  </div>
+</a>
+<h1>--Find the company name and the average salary of the company with the Highest average salary--</h1>
+<a href="{% url 'home_page' %}base">
+  <div class="button1">
+    Querie 5
+  </div>
+</a>
 <!-- Here you put whatever you want such as data or quires Up -->
 
 </div>
