@@ -9,7 +9,7 @@
 <header>
   <div class="div2">
     <div class="HeaderStyle">
-      Employment Data in the United States
+      State of public services in U.S
     </div>
   </div>
 </header>
@@ -41,21 +41,18 @@
 </a>
 
 <!-- Here you put whatever you want such as data or quires  -->
-
 <table>
   <tr>
-    <th>State</th>
-    <th>Wealth per Citizen (Defined as GDP/Population)</th>
+    <th>Number of tuples in person table</th>
   </tr>
   {% for row in rows %}
   <tr>
-    <td>{{ row.NAME }}</td>
-    <td>{{ row.WEALTH_PER_CITIZEN }}</td>
+    <td>{{ row.NUMBER_OF_PEOPLE }}</td>
   </tr>
   {% endfor %}
 </table>
 
-<!-- ends here  -->
+<!-- ends here -->
 
 </div>
 </body>

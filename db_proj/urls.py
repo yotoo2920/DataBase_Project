@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^queries/query3$', views.query3, name='query3'),
     url(r'^queries/query4$', views.query4, name='query4'),
     url(r'^queries/query5$', views.query5, name='query5'),
+    url(r'^queries/query6$', views.query6, name='query6'),
 ]

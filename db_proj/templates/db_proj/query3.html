@@ -17,29 +17,30 @@
 <body>
 
 <a href="{% url 'home_page' %}">
-  <div class="div1">
-    <div class="button1">
-      Home
-    </div>
+  <div class="div1"> <div class="button1">
+    Home
+  </div>
 </a>
 
-<a href="set_of_data.html">
+<a href="{% url 'set_of_data' %}">
   <div class="button1">
     Set Of Data
   </div>
 </a>
 
-<a href="queries.html">
+<a href="{% url 'queries' %}">
   <div class="button1">
     Queries
   </div>
 </a>
 
-<a href="about_us.html">
+<a href="{% url 'about_us' %}">
   <div class="button1">
     About Us
   </div>
 </a>
+
+<!-- Here you put whatever you want such as data or quires  -->
 
 <table>
   <tr>
@@ -54,7 +55,7 @@
   {% endfor %}
 </table>
 
-<!-- Here you put whatever you want such as data or quires  -->
+<!-- ends here -->
 
 </div>
 </body>

@@ -56,6 +56,13 @@ def query5(request):
 
 	return render(request, 'db_proj/query5.html', { 'rows': rows })
 
+def query6(request):
+	with connection.cursor() as cursor:
+		cursor.execute("SELECT COUNT(ID) AS NUMBER_OF_PEOPLE FROM PERSON")
+		rows = dictfetchall(cursor)
+
+	return render(request, 'db_proj/query6.html', { 'rows': rows })
+
 def about_us(request):
 	city = City.objects.using('default').get(name="Boston")
 	return render(request, 'db_proj/about_us.html', { 'city': city })
