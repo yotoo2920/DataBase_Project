@@ -14,15 +14,9 @@
   </div>
 </header>
 
-<!-- <body>
-<div class="div1">
+<body>
 
-{% block content %}
-{% endblock %}
-</div>
-</body> -->
-
-<a href="home_page.html">
+<a href="{% url 'home_page' %}">
   <div class="div1">
     <div class="button1">
       Home
@@ -47,9 +41,23 @@
   </div>
 </a>
 
+<table>
+  <tr>
+    <th>State</th>
+    <th>Wealth per Citizen (Defined as GDP/Population)</th>
+  </tr>
+  {% for row in rows %}
+  <tr>
+    <td>{{ row.NAME }}</td>
+    <td>{{ row.WEALTH_PER_CITIZEN }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
 <!-- Here you put whatever you want such as data or quires  -->
 
 </div>
+</body>
 
 <footer> <div class="div2">
   <div class="HeaderStyle">
@@ -57,4 +65,5 @@
   </div>
 </div>
 </footer>
+
 </html>

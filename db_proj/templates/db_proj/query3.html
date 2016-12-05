@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<html>
+<head>
+  <title>DataBase Project</title>
+  <link rel="stylesheet" href="{% static 'db_proj/db_proj.css' %}">
+</head>
+
+<header>
+  <div class="div2">
+    <div class="HeaderStyle">
+      State of public services in U.S
+    </div>
+  </div>
+</header>
+
+<body>
+
+<a href="{% url 'home_page' %}">
+  <div class="div1">
+    <div class="button1">
+      Home
+    </div>
+</a>
+
+<a href="set_of_data.html">
+  <div class="button1">
+    Set Of Data
+  </div>
+</a>
+
+<a href="queries.html">
+  <div class="button1">
+    Queries
+  </div>
+</a>
+
+<a href="about_us.html">
+  <div class="button1">
+    About Us
+  </div>
+</a>
+
+<table>
+  <tr>
+    <th>State</th>
+    <th>Average Salary</th>
+  </tr>
+  {% for row in rows %}
+  <tr>
+    <td>{{ row.STATE }}</td>
+    <td>{{ row.AVERAGE_SALARY }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<!-- Here you put whatever you want such as data or quires  -->
+
+</div>
+</body>
+
+<footer> <div class="div2">
+  <div class="HeaderStyle">
+    Information and Database Management Systems I
+  </div>
+</div>
+</footer>
+
+</html>
