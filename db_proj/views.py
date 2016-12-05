@@ -14,7 +14,7 @@ def home_page(request):
 
 def set_of_data(request):
 	city = City.objects.using('default').get(name="Atlanta")
-	return render(request, 'db_proj/home_page.html', { 'city': city })
+	return render(request, 'db_proj/set_of_data.html', { 'city': city })
 
 def queries(request):
 	sal = Person.objects.using('default').aggregate(Avg('weekly_salary'))
@@ -50,8 +50,11 @@ def query4(request):
 
 
 def query5(request):
-	city = City.objects.using('default').get(name="Miami")
-	return render(request, 'db_proj/queries.html', { 'city': city })
+	with connection.cursor() as cursor:
+		cursor.execute("SELECT COMPANY, AVG_WEEKLY_SAL*12 AS AVG_SALARY FROM(SELECT ORGANIZATION.NAME AS COMPANY, AVG(PERSON.WEEKLY_SALARY) AS AVG_WEEKLY_SAL FROM ORGANIZATION JOIN JOBS ON ORGANIZATION.NAME = JOBS.COMPANY_NAME JOIN PERSON ON JOBS.NAME = PERSON.OCCUPATION GROUP BY ORGANIZATION.NAME ORDER BY AVG_WEEKLY_SAL DESC) WHERE ROWNUM < 11")
+		rows = dictfetchall(cursor)
+
+	return render(request, 'db_proj/query5.html', { 'rows': rows })
 
 def about_us(request):
 	city = City.objects.using('default').get(name="Boston")
