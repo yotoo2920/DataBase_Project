@@ -1,4 +1,5 @@
 {% load staticfiles %}
+
 <html>
 <head>
   <title>DataBase Project</title>
@@ -11,7 +12,7 @@
 <header>
   <div class="div2">
     <div class="HeaderStyle">
-      State of public services in U.S
+      Employment Data in the United States
     </div>
   </div>
 </header>
@@ -24,25 +25,25 @@
 </div>
 </body> -->
 
-<a href="{% url 'home_page' %}#home_page">
+<a href="{% url 'home_page' %}">
   <div class="div1"> <div class="button1">
     Home
   </div>
 </a>
 
-<a href="{% url 'home_page' %}set_of_data">
+<a href="{% url 'set_of_data' %}">
   <div class="button1">
     Set Of Data
   </div>
 </a>
 
-<a href="{% url 'home_page' %}queries">
+<a href="{% url 'queries' %}">
   <div class="button1">
     Queries
   </div>
 </a>
 
-<a href="{% url 'home_page' %}about_us">
+<a href="{% url 'about_us' %}">
   <div class="button1">
     About Us
   </div>
@@ -56,25 +57,25 @@
   </div>
 </a>
 <h1>Selects the Occupation and yearly salary of the Occupation with the largest salary</h1>
-<a href="{% url 'home_page' %}">
+<a href="{% url 'query2' %}">
   <div class="button1">
     Query 2
   </div>
 </a>
 <h1>Selects the top 10 names and average salaries from states with the top average salaries</h1>
-<a href="{% url 'home_page' %}">
+<a href="{% url 'query3' %}">
   <div class="button1">
     Query 3
   </div>
 </a>
 <h1>--Selects the Name of the state and the WPC(wealth per citizen)defined as the GDP of state/Population of the state with the highest wealth per citizen--</h1>
-<a href="{% url 'home_page' %}">
+<a href="{% url 'query4' %}">
   <div class="button1">
     Query 4
   </div>
 </a>
 <h1>--Find the company name and the average salary of the company with the Highest average salary--</h1>
-<a href="{% url 'home_page' %}">
+<a href="{% url 'query5' %}">
   <div class="button1">
     Query 5
   </div>
